@@ -1,16 +1,79 @@
-# React + Vite
+# React Admin Dashboard 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **React Admin Dashboard** built using **React + Vite**.  
+This project includes authentication, protected routing, a collapsible sidebar with icons, topbar search, animated login page, Bootstrap-styled tables, forms, pagination, and a fully responsive UI.  
+Ideal for real-world admin panels and portfolio projects.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔥 Features
 
-## React Compiler
+- 🔐 **Authentication & Protected Routes**
+- 📊 **Dashboard with stats cards and charts**
+- 👥 **Users Management Page**
+  - Responsive Bootstrap table
+  - Clean UI with role badges
+- 📝 **Forms Page**
+  - Text, Email, Password
+  - Select, Radio, Checkbox
+  - Switch, Range Slider
+  - Date & Date Range
+  - Color Picker & Textarea
+- 📋 **Data Table Page**
+  - Fully responsive table
+  - Live search functionality
+  - Pagination
+- 📂 **Collapsible Sidebar**
+  - Icons visible in minimized mode
+- 🔍 **Topbar**
+  - Search bar
+  - Dark mode toggle
+  - Logout button
+- 🎨 **Animated & Modern Login Page**
+- 🌙 **Dark Mode Support**
+- 📱 **Mobile Responsive Design**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React.js**
+- **JavaScript (ES6+)**
+- **Vite**
+- **React Router DOM**
+- **Bootstrap 5**
+- **CSS3**
+- **React Icons**
+
+---
+
+## 🔑 Demo Login Credentials
+
+Email: admin@gmail.com
+Password: admin123
+
+---
+
+## 📂 Project Structure
+
+```bash
+src/
+│── components/
+│   ├── Sidebar.jsx
+│   ├── Topbar.jsx
+│   ├── ProtectedRoute.jsx
+│
+│── layout/
+│   └── Layout.jsx
+│
+│── pages/
+│   ├── Dashboard.jsx
+│   ├── Users.jsx
+│   ├── Forms.jsx
+│   ├── DataTable.jsx
+│   └── Login.jsx
+│
+│── App.jsx
+│── main.jsx
+│── index.css
+
