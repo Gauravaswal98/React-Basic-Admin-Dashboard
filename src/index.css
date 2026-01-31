@@ -1,0 +1,449 @@
+/* ================== RESET ================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  background: #f4f6f8;
+  overflow-x: hidden;
+}
+
+/* ================== LAYOUT ================== */
+.dashboard {
+  display: flex;
+  height: 100vh;
+}
+
+/* ================== SIDEBAR ================== */
+.sidebar {
+  width: 230px;
+  background: linear-gradient(180deg, #1e1e2f, #151525);
+  color: white;
+  padding: 24px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.sidebar h2 {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+.menu {
+  display: block;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+
+.menu:hover {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+.menu.active {
+  background: linear-gradient(135deg, #6a5af9, #00eaff);
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 234, 255, 0.45);
+}
+
+/* Sidebar collapsed menu */
+.sidebar.collapsed .menu {
+  text-align: center;
+  font-size: 0;
+  padding: 14px 0;
+}
+
+.sidebar.collapsed .menu::first-letter {
+  font-size: 14px;
+}
+
+/* ================== MAIN ================== */
+.main {
+  flex: 1;
+  padding: 24px;
+  background: linear-gradient(180deg, #f6f8fb, #eef2f7);
+  overflow-y: auto;
+}
+
+/* ================== TOPBAR ================== */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 22px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topbar h3 {
+  font-size: 20px;
+}
+
+/* Burger button */
+.burger-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Search bar */
+.topbar-search input {
+  width: 260px;
+  padding: 8px 16px;
+  border-radius: 22px;
+  border: 1px solid #ddd;
+  outline: none;
+  background: #f5f6fa;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.topbar-search input:focus {
+  background: white;
+  border-color: #6a5af9;
+  box-shadow: 0 0 0 3px rgba(106, 90, 249, 0.15);
+}
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ================== ICON BUTTON ================== */
+.icon-btn {
+  border: none;
+  background: #f1f1f1;
+  padding: 7px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+.icon-btn:hover {
+  background: #e0e0e0;
+}
+
+/* ================== LOGOUT ================== */
+.logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 22px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ff4d4f, #ff7875);
+  color: white;
+  box-shadow: 0 6px 18px rgba(255, 77, 79, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 26px rgba(255, 77, 79, 0.5);
+}
+
+/* ================== CARDS ================== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.6s ease;
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card h4 {
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.stat-card p {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+/* ================== CHART ================== */
+.chart {
+  margin-top: 40px;
+  padding: 24px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+  animation: fadeUp 0.7s ease;
+}
+
+/* ================== TABLE ================== */
+.table-card {
+  background: white;
+  padding: 24px;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+  padding: 14px;
+  text-align: left;
+}
+
+.user-table th {
+  color: #555;
+}
+
+.user-table tr:hover {
+  background: #f6f9ff;
+}
+
+/* ================== DARK MODE ================== */
+.dark {
+  background: #121212;
+  color: white;
+}
+
+.dark .sidebar {
+  background: #000;
+}
+
+.dark .main {
+  background: linear-gradient(180deg, #121212, #1a1a1a);
+}
+
+.dark .topbar,
+.dark .stat-card,
+.dark .chart,
+.dark .table-card {
+  background: #1e1e1e;
+  color: white;
+}
+
+.dark .menu.active {
+  box-shadow: 0 8px 25px rgba(0, 234, 255, 0.6);
+}
+
+/* ================== ANIMATION ================== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================== RESPONSIVE ================== */
+@media (max-width: 768px) {
+  .topbar-search {
+    display: none;
+  }
+
+  .sidebar {
+    position: fixed;
+    left: -100%;
+    height: 100vh;
+    z-index: 999;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+}
+
+/* Sidebar menu with icons */
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: all 0.25s ease;
+}
+
+.menu-icon {
+  font-size: 18px;
+  min-width: 20px;
+}
+
+/* Collapsed sidebar icon-only view */
+.sidebar.collapsed .menu {
+  justify-content: center;
+  padding: 14px 0;
+}
+
+.sidebar.collapsed .menu-text {
+  display: none;
+}
+
+.sidebar.collapsed .menu-icon {
+  font-size: 20px;
+}
+
+/* Logo alignment fix */
+.logo-icon {
+  font-size: 22px;
+}
+
+.table-card h3 {
+  font-weight: 600;
+}
+
+.table thead th {
+  font-size: 14px;
+  color: #555;
+}
+
+.table tbody td {
+  font-size: 14px;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #f6f9ff;
+}
+
+/* ================== LOGIN PAGE ================== */
+.login-page {
+  height: 100vh;
+  background: radial-gradient(circle at top, #2b2e4a, #0f0f1f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Animated glow */
+.login-glow {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  background: linear-gradient(45deg, #6a5af9, #00eaff);
+  filter: blur(130px);
+  animation: glowMove 6s infinite alternate ease-in-out;
+}
+
+@keyframes glowMove {
+  from {
+    transform: translate(-120px, -80px);
+  }
+
+  to {
+    transform: translate(120px, 80px);
+  }
+}
+
+/* Login card */
+.login-box {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 36px 32px;
+  width: 360px;
+  border-radius: 20px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  z-index: 2;
+  animation: fadeUp 0.8s ease;
+}
+
+.login-box h2 {
+  font-weight: 700;
+}
+
+.login-box .form-control {
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+/* Login button */
+.login-btn {
+  padding: 10px;
+  border-radius: 25px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #6a5af9, #00eaff);
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(0, 234, 255, 0.45);
+}
+
+/* Hint box */
+.login-hint {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #555;
+  background: #f5f7fb;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Reuse animation */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
